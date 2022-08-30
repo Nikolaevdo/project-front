@@ -1,4 +1,446 @@
-th, td{
-    border: 1px solid black;
-    padding: 3px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.text {
+    font-size: 18px;
+    color: #272418d6;
+}
+
+.header {
+    padding-top: 30px;
+    text-align: center;
+    font-size: 38px;
+    background: linear-gradient(180deg, rgba(247, 0, 86, 0.6) 9.84%, rgba(152, 195, 232, 0) 70.12%);
+    color: rgba(255, 17, 17, 0.69);
+}
+
+.accounts {
+    margin: 50px auto;
+    max-width: 1200px;
+    box-shadow: 0px 5px 20px rgba(255, 0, 0, 0.51);
+    border-end-end-radius: 10px;
+    border-end-start-radius: 10px;
+}
+
+.accounts_header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: black;
+    display: flex;
+    border: 1px solid rgba(255, 0, 0, 0.76);
+
+}
+
+.text_header {
+    margin: 4px 240px 4px 0;
+    font-size: 28px;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+}
+
+.accounts__view {
+    margin-left: 20px;
+    min-width: 240px;
+    display: flex;
+    color: #ffffff;
+    align-items: center;
+}
+
+.view_label {
+    margin-right: 10px;
+    font-size: 18px;
+    text-align: right;
+}
+
+#accounts_per_page {
+    outline: none;
+    height: 30px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-size: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+}
+
+#accounts_per_page:hover {
+    background-color: rgb(36, 36, 36);
+    transition: background-color 0.3s;
+}
+
+.players {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.column_header {
+    border: 1px solid rgba(255, 0, 30, 0.88);
+    font-weight: 700;
+    font-size: 20px;
+    padding: 5px 5px;
+    background-color: rgba(255, 0, 47, 0.88);
+    color: #ffffff;
+}
+
+.column__item {
+    padding: 5px 5px;
+    border: 1px solid rgba(255, 0, 47, 0.88);
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+}
+
+#id {
+    max-width: 50px;
+}
+
+#race,
+#level,
+#banned {
+    max-width: 100px;
+}
+
+#title {
+    min-width: 240px;
+    max-width: 430px;
+}
+
+#name {
+    min-width: 160px;
+}
+
+#edit,
+#delete {
+    max-width: 70px;
+}
+
+#pages {
+    margin-top: 12px;
+    display: flex;
+    padding: 10px;
+    border: none;
+    border-top: 4px solid rgba(255, 0, 47, 0.88);;
+    border-end-end-radius: 10px;
+    border-end-start-radius: 10px;
+}
+
+.pages_legend {
+    margin-left: 20px;
+    padding: 0 20px;
+    font-weight: 700;
+    color: rgba(255, 0, 47, 0.88);;
+}
+
+.page_button {
+    display: none;
+}
+
+.page_label {
+    margin-right: 2px;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    background-color: rgba(255, 0, 0, 0.76);;
+    box-shadow: inset -2px -2px 2px 0px rgb((255, 0, 47, 0.88);;
+    border: 1px solid rgba(0, 25, 255, 0.05);
+
+    transition: 250ms ease-in-out;
+}
+
+.page_label:active {
+    background-color: rgba(255, 0, 47, 0.88);;
+}
+
+.page_label:hover {
+    background-color: rgba(255, 0, 47, 0.88);;
+}
+
+input.page_button:checked+label {
+    background-color: rgba(255, 0, 0, 0.71);
+}
+
+input.page_button:checked+label:hover {
+    background-color: rgba(183, 0, 0, 0.836);
+}
+
+.image {
+    width: 30px;
+}
+
+.image:hover {
+    width: 35px;
+    transition: width 0.1s;
+}
+
+.image:active {
+    filter: opacity(80%);
+    animation: shake 0.5s;
+}
+
+.input {
+    padding: 5px 0px;
+}
+
+.input_text {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-color: #ff50003d;
+    border: none;
+    padding: 5px 0px;
+}
+
+.input_textarea {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-color: #ff50003d;
+    border: none;
+    resize: none;
+    padding: 3px 0px;
+    height: auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.input_selector {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    background-color: #ff50003d;
+    border: none;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.create_user {
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 680px;
+    box-shadow: 0px 5px 20px rgba(173, 53, 53, 0.78);
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.create_user>h2 {
+    text-align: center;
+    font-size: 26px;
+}
+
+#create_user_form {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#create_user_form .form_selector:last-of-type {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.form_selector {
+    border: 1px solid rgb(255, 31, 31);
+    width: 130px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: inset 2px 3px 10px 0px rgb(0 0 0 / 52%);
+}
+
+.form_selector_header {
+    line-height: 30px;
+    background-color: rgba(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_selector>input {
+    display: none;
+}
+
+.form_credentials {
+    padding: 16px 16px 10px;
+    width: 384px;
+    background: linear-gradient(352deg, rgba(255, 31, 31, 0.93) 81%, rgba(255, 255, 255, 0.75) 109%);
+    box-shadow: 6px 0px 10px 1px rgb(0 0 0 / 52%);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.form_info {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form_info_level {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 170px;
+}
+
+.form_info_birthday {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form_text_title {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+}
+
+.form_text {
+    margin-top: 6px;
+    padding-left: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    opacity: 1;
+    line-height: 30px;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.form_info_banned {
+    margin-top: 10px;
+    margin-left: 60px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.form_label {
+    color: grey;
+    text-align: center;
+    line-height: 30px;
+}
+
+.form_label:hover {
+    background-color: rgba(255, 31, 31, 0.74);
+}
+
+input:checked+.form_label {
+    color: white;
+    background: rgb(255, 31, 31);
+    box-shadow: inset 3px 0px 6px 1px rgb(0 0 0 / 52%);
+}
+
+input:checked+.form_label:hover {
+    background: rgb(227, 21, 21);
+}
+
+.banned_container {
+    padding: 1px;
+    border: 2px double #06132470;
+    width: 80px;
+    border-radius: 5px;
+    line-height: 30px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(144, 139, 139, 1);
+    box-shadow: inset 1px 1px 6px 2px rgb(0 0 0 / 39%);
+}
+
+.banned_container>label {
+    width: 100%;
+    border-radius: 2px;
+    text-align: center;
+    color: white;
+}
+
+.banned_container>label:hover {
+    background: rgba(76, 78, 86, 0.18);
+}
+
+.form_info_banned>div>input {
+    display: none;
+}
+
+#banned_true:checked+label {
+    box-shadow: 4px 4px 3px 2px rgb(0 0 0 / 9%);
+    background: linear-gradient(334deg, rgba(255, 0, 0, 0.75) 53%, rgba(255, 255, 255, 0.75) 129%);
+    border-radius: 5px;
+}
+
+#banned_false:checked+label {
+    box-shadow: 4px 4px 3px 2px rgb(0 0 0 / 9%);
+    background: linear-gradient(334deg, rgba(0, 0, 0, 0.57) 53%, rgba(255, 255, 255, 0.75) 129%);
+    border-radius: 5px;
+}
+
+.submit {
+    margin: 28px 0px 10px;
+    width: 100%;
+    line-height: 40px;
+    border-radius: 5px;
+    border: none
+}
+
+.submit_text {
+    background: linear-gradient(358deg, rgb(61 59 59) 55%, white 147%);
+    border: 1px solid rgba(165, 21, 26, 0.63);
+    box-shadow: 4px 4px 3px 1px rgb(0 0 0 / 9%);
+    color: white;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: ease-in-out 0.1s;
+}
+
+.submit_text:hover {
+    background: linear-gradient(358deg, rgb(65 65 65) 55%, white 147%);
+    font-size: 16px;
+}
+
+.submit_text:active {
+    background: linear-gradient(358deg, rgb(61 59 59) 55%, white 147%);
+}
+
+@keyframes shake {
+
+    0%,
+    30%,
+    60%,
+    90%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    10%,
+    40%,
+    70% {
+        transform: rotate(-5deg);
+    }
+
+    20%,
+    50%,
+    80% {
+        transform: rotate(5deg);
+    }
 }
