@@ -25,7 +25,7 @@ body {
 .accounts {
     margin: 50px auto;
     max-width: 1200px;
-    box-shadow: 0px 5px 20px rgba(255, 0, 0, 0.51);
+    box-shadow: 0 5px 20px rgba(255, 0, 0, 0.51);
     border-end-end-radius: 10px;
     border-end-start-radius: 10px;
 }
@@ -160,7 +160,7 @@ body {
     font-size: 18px;
     border-radius: 8px;
     background-color: rgba(255, 0, 0, 0.76);;
-    box-shadow: inset -2px -2px 2px 0px rgb((255, 0, 47, 0.88);;
+    box-shadow: inset -2px -2px 2px 0 rgb(255, 0, 47, 0.88);;
     border: 1px solid rgba(0, 25, 255, 0.05);
 
     transition: 250ms ease-in-out;
@@ -197,7 +197,7 @@ input.page_button:checked+label:hover {
 }
 
 .input {
-    padding: 5px 0px;
+    padding: 5px 0;
 }
 
 .input_text {
@@ -206,17 +206,16 @@ input.page_button:checked+label:hover {
     text-align: center;
     background-color: #ff50003d;
     border: none;
-    padding: 5px 0px;
+    padding: 5px 0;
 }
 
 .input_textarea {
-    height: 100%;
     width: 100%;
     text-align: center;
     background-color: #ff50003d;
     border: none;
     resize: none;
-    padding: 3px 0px;
+    padding: 3px 0;
     height: auto;
     font-family: 'Roboto', sans-serif;
 }
@@ -238,7 +237,7 @@ input.page_button:checked+label:hover {
     margin: 50px auto;
     padding: 20px;
     max-width: 680px;
-    box-shadow: 0px 5px 20px rgba(173, 53, 53, 0.78);
+    box-shadow: 0 5px 20px rgba(173, 53, 53, 0.78);
     justify-content: center;
     border-radius: 10px;
 }
@@ -264,7 +263,7 @@ input.page_button:checked+label:hover {
     width: 130px;
     display: flex;
     flex-direction: column;
-    box-shadow: inset 2px 3px 10px 0px rgb(0 0 0 / 52%);
+    box-shadow: inset 2px 3px 10px 0 rgb(0 0 0 / 52%);
 }
 
 .form_selector_header {
@@ -283,7 +282,7 @@ input.page_button:checked+label:hover {
     padding: 16px 16px 10px;
     width: 384px;
     background: linear-gradient(352deg, rgba(255, 31, 31, 0.93) 81%, rgba(255, 255, 255, 0.75) 109%);
-    box-shadow: 6px 0px 10px 1px rgb(0 0 0 / 52%);
+    box-shadow: 6px 0 10px 1px rgb(0 0 0 / 52%);
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
@@ -343,13 +342,13 @@ input.page_button:checked+label:hover {
 }
 
 .form_label:hover {
-    background-color: rgba(255, 31, 31, 0.74);
+    background-color: rgba(255, 31, 31, 0.89);
 }
 
 input:checked+.form_label {
     color: white;
     background: rgb(255, 31, 31);
-    box-shadow: inset 3px 0px 6px 1px rgb(0 0 0 / 52%);
+    box-shadow: inset 3px 0 6px 1px rgb(0 0 0 / 52%);
 }
 
 input:checked+.form_label:hover {
@@ -396,7 +395,7 @@ input:checked+.form_label:hover {
 }
 
 .submit {
-    margin: 28px 0px 10px;
+    margin: 28px 0 10px;
     width: 100%;
     line-height: 40px;
     border-radius: 5px;

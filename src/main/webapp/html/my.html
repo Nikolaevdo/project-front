@@ -14,8 +14,8 @@
 <div class="accounts">
     <div class="accounts_header">
         <div class="accounts__view">
-            <label for="view_count" class="view_label">Accounts per page</label>
-            <select id="accounts_per_page" name="view_count">
+            <label class="view_label">Accounts per page</label>
+            <label for="accounts_per_page"></label><select id="accounts_per_page" name="view_count">
                 <option value="3" selected>3</option>
                 <option value="5">5</option>
                 <option value="10">10</option>
@@ -116,7 +116,7 @@
             <label class="form_label" for="prof_cleric">Cleric</label>
             <input type="radio" id="prof_paladin" class="prof_button" name="profession" value="PALADIN">
             <label class="form_label" for="prof_paladin">Paladin</label>
-            <input type="radio" id="prof_nazgul" class="prof_button" name="profession" value="NAZGUL">
+            <input type="radio" id="prof_angular" class="prof_button" name="profession" value="NAZGUL">
             <label class="form_label" for="prof_nazgul">Nazgul</label>
             <input type="radio" id="prof_warlock" class="prof_button" name="profession" value="WARLOCK">
             <label class="form_label" for="prof_warlock">Warlock</label>
@@ -300,9 +300,7 @@
         inputContainers.forEach(container => {
             const param = container.id.split('_')[1]
             const input = container.firstChild
-            const value = input.value
-
-            options[param] = value
+            options[param] = input.value
         })
 
         updatePlayerThen(request.update(playerId), options, refreshTable)
@@ -360,7 +358,7 @@
                 field.setCustomValidity("")
             } else {
                 field.setCustomValidity(constraints[fieldName].info)
-                return
+
             }
         } else {
             const constraint = new RegExp(constraints[fieldName].regex, 'u')
@@ -369,7 +367,7 @@
                 field.setCustomValidity("")
             } else {
                 field.setCustomValidity(constraints[fieldName].info)
-                return
+
             }
         }
     }
@@ -593,11 +591,10 @@
     function getWithOptionThen(request, options, action) { $.get(request, options, action) }
 
     function getOption(pageNumber, pageSize = 3) {
-        const option = {
+        return {
             pageNumber: pageNumber,
             pageSize: pageSize
         }
-        return option
     }
 
     function deletePlayerThen(id, action) {
@@ -620,4 +617,3 @@
 </script>
 </body>
 
-</html>
