@@ -4,8 +4,86 @@
     <script src=https://code.jquery.com/jquery-3.6.0.min.js></script>
     <link href="/css/my.css" rel="stylesheet">
 </head>
-<body>
+<body onload="show_lisl()">
 <h1>RPG admin panel</h1>
 
+<label for="counter_1">Count per page:</label>
+<select id="counter_1" onchange="show_lisl()">
+    <option value="3">3</option>
+    <option value="3">5</option>
+    <option value="3">10</option>
+    <option value="3">20</option>
+</select>
+
+<table id="table_1">
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Title</th>
+        <th>Race</th>
+        <th>Profession</th>
+        <th>Level</th>
+        <th>Birthday</th>
+        <th>Banned</th>
+    </tr>
+
+
+</table>
+
+<div id="padding_buttons">Pages</div>
+>
+
+<script>
+    function show_lisl() {
+        $('tr:has(td)').remove();
+        let url = "/rest/players";
+        $.get(url, function (response) {
+            $.each(response, function (i, item) {
+                $('<tr>').html("<td>"
+                    + item.id + "</td><td>"
+                    + item.name + "</td><td>"
+                    + item.title + "</td><td>"
+                    + item.race + "</td><td>"
+                    + item.profession + "</td><td>"
+                    + item.level + "</td><td>"
+                    + new Date(item.birthday).toLocaleDateString() + "</td><td>"
+                    + item.banned + "</td>"
+                ).appendTo("#table_1");
+            });
+        });
+        let totalCount = getTotalCount();
+        let countPerPage = $('#counter_1').val();
+        if (countPerPage == null) {
+            countPerPage = 3;
+        }
+        let pagesCount=Math.ceil(totalCount/ countPerPage);
+
+        $('button.pgn--btn-styles').remove();
+      for (let i = 0; i<pagesCount; i++){
+            let button_tag = "<button>" + (i + 1) + "</button>";
+            let btn = $(button_tag)
+                .attr('id', 'paging_button_' + i)
+                .attr('onclick','show_list()')
+                .addClass('pgn--btn-styles');
+            $('#padding_buttons').append(btn);
+        }
+    }
+
+    function getTotalCount() {
+        let url = "/rest/players/count";
+        let res = 0
+
+
+        $.ajax({
+            url: url,
+            async: false,
+            success: function (result) {
+                res = parseInt(result);
+            }
+        });
+
+        return res
+    }
+</script>
 </body>
 </html>
